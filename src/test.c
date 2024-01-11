@@ -6,7 +6,15 @@
 /*   By: ahiguera <ahiguera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 14:20:59 by ahiguera          #+#    #+#             */
-/*   Updated: 2024/01/10 14:21:00 by ahiguera         ###   ########.fr       */
+/*   Updated: 2024/01/11 15:37:17 by ahiguera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "pipex.h"
+
+int	main(void)
+{
+	//TODO: hacer un main
+	pipex();
+	return (0);
+}

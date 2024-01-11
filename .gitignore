@@ -2,3 +2,5 @@
 *.out
 pipo
 *.vscode
+outfile
+infile
