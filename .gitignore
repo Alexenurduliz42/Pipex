@@ -1,6 +1,6 @@
 .DS_Store
 *.out
-pipo
 *.vscode
-outfile
+pipex
 infile
+outfile
