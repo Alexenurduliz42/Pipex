@@ -6,7 +6,7 @@
 #    By: ahiguera <ahiguera@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/10 14:20:43 by ahiguera          #+#    #+#              #
-#    Updated: 2024/01/22 20:09:05 by ahiguera         ###   ########.fr        #
+#    Updated: 2024/01/23 19:29:08 by ahiguera         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,6 @@ CFLAGS 	= -Wall -Wextra -Werror -g
 
 SRCS 	= src/pipex.c src/utils.c
 OBJS 	= ${SRCS:.c=.o}
-
 
 .c.o:		%.o : %.c
 					@gcc ${CFLAGS} -c $< -o $(<:.c=.o)
@@ -42,7 +41,7 @@ fclean: 	clean
 
 re:			fclean all
 
-.PHONY: all clean fclean re party
+.PHONY: all clean fclean re
 
 #------------------------------------------------#
 #   ASCII ART                                    #
