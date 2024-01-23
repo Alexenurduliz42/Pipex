@@ -6,7 +6,7 @@
 /*   By: ahiguera <ahiguera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 12:24:20 by ahiguera          #+#    #+#             */
-/*   Updated: 2024/01/22 19:11:33 by ahiguera         ###   ########.fr       */
+/*   Updated: 2024/01/23 18:09:39 by ahiguera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <stdlib.h>
 # include <string.h>
 # include <sys/wait.h>
+# include "../libft/libft.h"
 
 # define READ_FD	0
 # define WRITE_FD	1
