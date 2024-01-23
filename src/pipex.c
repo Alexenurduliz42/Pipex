@@ -6,14 +6,19 @@
 /*   By: ahiguera <ahiguera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 14:20:33 by ahiguera          #+#    #+#             */
-/*   Updated: 2024/01/22 19:56:16 by ahiguera         ###   ########.fr       */
+/*   Updated: 2024/01/23 19:32:03 by ahiguera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-/* Child process that run inside a fork, take the infile, put the output inside
- a pipe and then close with the exec function */
+/*
+ * @param argc: The number of command-line arguments passed to the program.
+ * @param argv: An array of strings containing the command-line arguments.
+ * @param envp: An array of strings representing the environment variables.
+
+ used to set up and execute a child process in a pipe, where the
+output of one command is redirected to the input of another command. */
 void	child_process(char **argv, char **envp, int *fd)
 {
 	int		infile;
@@ -27,8 +32,10 @@ void	child_process(char **argv, char **envp, int *fd)
 	execute(argv[2], envp);
 }
 
-/* Parent process that take the data from the pipe, change the output for the
- outfie and also close with the exec function */
+/* The parent_process function is used to set up and execute a parent process
+in a pipe scenario, where the output of the child process (from the pipe's
+read end) is redirected to a specified output file.
+*/
 void	parent_process(char **argv, char **envp, int *fd)
 {
 	int		outfie;
@@ -42,8 +49,6 @@ void	parent_process(char **argv, char **envp, int *fd)
 	execute(argv[3], envp);
 }
 
-/* Main function that run the child and parent process or display an error
- message if arguments are wrong */
 int	main(int argc, char **argv, char **envp)
 {
 	int		fd[2];
