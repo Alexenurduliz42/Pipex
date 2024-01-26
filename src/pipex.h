@@ -20,7 +20,7 @@
 # include <stdlib.h>
 # include <string.h>
 # include <sys/wait.h>
-# include "../libft/libft.h"
+# include "../Libft_2.0/src/libft.h"
 
 # define READ_FD	0
 # define WRITE_FD	1
