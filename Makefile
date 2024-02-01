@@ -39,6 +39,7 @@ clean:
 fclean: 	clean
 					@make fclean -C $(LIBFT_DIR) ${SILENCE}
 					@rm -f $(NAME)
+					@rm -fr infile outfile
 					@echo "\n\033[35m Deleting EVERYTHING! (-_-)\n"
 					@echo "$$ART"
 
