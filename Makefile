@@ -45,7 +45,10 @@ fclean: 	clean
 
 re:			fclean all
 
-.PHONY: all clean fclean re
+norm:
+					@norminette src/*.c src/*.h
+
+.PHONY: all clean fclean re norm
 
 #------------------------------------------------#
 #   ASCII ART                                    #
