@@ -1,6 +1,15 @@
+
+                    ██████╗ ██╗██████╗ ███████╗██╗  ██╗
+                    ██╔══██╗██║██╔══██╗██╔════╝╚██╗██╔╝
+                    ██████╔╝██║██████╔╝█████╗   ╚███╔╝ 
+                    ██╔═══╝ ██║██╔═══╝ ██╔══╝   ██╔██╗ 
+                    ██║     ██║██║     ███████╗██╔╝ ██╗
+                    ╚═╝     ╚═╝╚═╝     ╚══════╝╚═╝  ╚═╝
+
+---
 # Pipex
 
-Este proyecto es una implementación del comando `pipe` en el lenguaje de programación C.
+    Este proyecto es una implementación del comando `pipe` en el lenguaje de programación C.
 
 ## Descripción
 
