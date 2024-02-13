@@ -39,12 +39,16 @@ clean:
 fclean: 	clean
 					@make fclean -C $(LIBFT_DIR) ${SILENCE}
 					@rm -f $(NAME)
+					@rm -fr infile outfile
 					@echo "\n\033[35m Deleting EVERYTHING! (-_-)\n"
 					@echo "$$ART"
 
 re:			fclean all
 
-.PHONY: all clean fclean re
+norm:
+					@norminette src/*.c src/*.h
+
+.PHONY: all clean fclean re norm
 
 #------------------------------------------------#
 #   ASCII ART                                    #

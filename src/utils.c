@@ -12,21 +12,29 @@
 
 #include "pipex.h"
 
+/* error control function. */
+void	error(void)
+{
+	perror("\033[31mError");
+	exit(EXIT_FAILURE);
+}
+
+/* looks in the environment variables (PATH variable) to find the full path to the given command */
 char	*find_path(char *cmd, char **envp)
 {
-	char	**paths;
+	char	**route;
 	char	*path;
-	int		i;
 	char	*part_path;
+	int		i;
 
 	i = 0;
 	while (ft_strnstr(envp[i], "PATH", 4) == 0)
 		i++;
-	paths = ft_split(envp[i] + 5, ':');
+	route = ft_split(envp[i] + 5, ':');
 	i = 0;
-	while (paths[i])
+	while (route[i])
 	{
-		part_path = ft_strjoin(paths[i], "/");
+		part_path = ft_strjoin(route[i], "/");
 		path = ft_strjoin(part_path, cmd);
 		free(part_path);
 		if (access(path, F_OK) == 0)
@@ -35,26 +43,19 @@ char	*find_path(char *cmd, char **envp)
 		i++;
 	}
 	i = -1;
-	while (paths[++i])
-		free(paths[i]);
-	free(paths);
+	while (route[++i])
+		free(route[i]);
+	free(route);
 	return (0);
 }
 
-/* error control function. */
-void	error(void)
-{
-	perror("\033[31mError");
-	exit(EXIT_FAILURE);
-}
 
-/* Function that take the command and send it to find_path
- before executing it. */
+/* Function that take the command and send it to find_path before executing it. */
 void	execute(char *argv, char **envp)
 {
 	char	**cmd;
-	int		i;
 	char	*path;
+	int		i;
 
 	i = -1;
 	cmd = ft_split(argv, ' ');
