@@ -6,21 +6,15 @@
 /*   By: ahiguera <ahiguera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 19:24:58 by ahiguera          #+#    #+#             */
-/*   Updated: 2024/01/22 19:25:25 by ahiguera         ###   ########.fr       */
+/*   Updated: 2024/02/14 16:16:21 by ahiguera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-/* error control function. */
-void	error(void)
-{
-	perror("\033[31mError");
-	exit(EXIT_FAILURE);
-}
-
-/* looks in the environment variables (PATH variable) to find the full path to the given command */
-char	*find_path(char *cmd, char **envp)
+/* looks in the environment variables (PATH variable) to find the
+full path to the given command */
+char	*pp_find_path(char *cmd, char **envp)
 {
 	char	**route;
 	char	*path;
@@ -49,9 +43,9 @@ char	*find_path(char *cmd, char **envp)
 	return (0);
 }
 
-
-/* Function that take the command and send it to find_path before executing it. */
-void	execute(char *argv, char **envp)
+/* Function that take the command and send it to find_path before
+executing it. */
+void	pp_execute(char *argv, char **envp)
 {
 	char	**cmd;
 	char	*path;
@@ -59,14 +53,21 @@ void	execute(char *argv, char **envp)
 
 	i = -1;
 	cmd = ft_split(argv, ' ');
-	path = find_path(cmd[0], envp);
+	path = pp_find_path(cmd[0], envp);
 	if (!path)
 	{
 		while (cmd[++i])
 			free(cmd[i]);
 		free(cmd);
-		error();
+		pp_error();
 	}
 	if (execve(path, cmd, envp) == -1)
-		error();
+		pp_error();
+}
+
+/* error control function. */
+void	pp_error(void)
+{
+	perror("\033[31mError");
+	exit(EXIT_FAILURE);
 }

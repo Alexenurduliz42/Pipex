@@ -6,7 +6,7 @@
 /*   By: ahiguera <ahiguera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 12:24:20 by ahiguera          #+#    #+#             */
-/*   Updated: 2024/01/23 18:09:39 by ahiguera         ###   ########.fr       */
+/*   Updated: 2024/02/14 15:50:30 by ahiguera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,9 @@
 # define READ_FD	0
 # define WRITE_FD	1
 
-char	*find_path(char *cmd, char **envp);
-void	execute(char *argv, char **envp);
-void	error(void);
+char	*pp_find_path(char *cmd, char **envp);
+void	pp_execute(char *argv, char **envp);
+char	*pp_rm_spaces(char *message);
+void	pp_error(void);
 
 #endif
